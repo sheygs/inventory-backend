@@ -7,5 +7,4 @@ namespace Catalog.Entities
        public string Price { get; init; }
        public DateTimeOffSet CreatedAt { get; init; }
    }
-
 }

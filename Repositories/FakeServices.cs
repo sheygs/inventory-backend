@@ -7,7 +7,7 @@ namespace Catalog.Repositories
            new Item { Id = Guid.NewGuid(), Name = "T-shirt", Price = 500, CreatedAt = DateTimeOffSet.UtcNow },
            new Item { Id = Guid.NewGuid(), Name = "Choco Milo", Price = 100, CreatedAt = DateTimeOffSet.UtcNow },
            new Item { Id = Guid.NewGuid(), Name = "Pasta", Price = 400, CreatedAt = DateTimeOffSet.UtcNow },
-           new Item { Id = Guid.NewGuid(), Name = "", Price = 150, CreatedAt = DateTimeOffSet.UtcNow }
+           new Item { Id = Guid.NewGuid(), Name = "Bread", Price = 150, CreatedAt = DateTimeOffSet.UtcNow }
         };
 
         public IEnumerable<Item> GetItems()
