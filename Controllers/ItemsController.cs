@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using Catalog.Entities;
 using System;
+using System.Linq;
+using Catalog.Dtos;
 
 namespace Catalog.Controllers 
 {
@@ -18,22 +20,22 @@ namespace Catalog.Controllers
  
         // GET /items
         [HttpGet]
-        public IEnumerable<Item> GetItems()
+        public IEnumerable<ItemDto> GetItems()
         {
-          return services.GetItems();
+          return services.GetItems().Select(item => item.AsDto());
         }
 
        // GET /items/{Id}
        [HttpGet("{Id}")]
        // ActionResult allows you to return more than one type
-       public ActionResult<Item> GetItem(Guid Id)
+       public ActionResult<ItemDto> GetItem(Guid Id)
        {
         var item = services.GetItem(Id);
         if (item is null)
         {
             return NotFound();
         }
-        return Ok(item);
+        return Ok(item.AsDto());
        }
 
     }
