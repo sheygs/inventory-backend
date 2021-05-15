@@ -5,7 +5,8 @@ using System.Linq;
 
 namespace Catalog.Repositories 
 {
-    public class FakeServices
+   
+    public class FakeService : IFakeService
     {
         private readonly List<Item> items  = new List<Item>()
         {

@@ -10,11 +10,10 @@ namespace Catalog.Controllers
     [Route("items")]
     public class ItemsControllers: ControllerBase
     {
-        private readonly FakeServices services;
-        public ItemsControllers()
+        private readonly IFakeService services;
+        public ItemsControllers(IFakeService services)
         {
-            services = new FakeServices();
-           
+            this.services = services;          
         }
  
         // GET /items
